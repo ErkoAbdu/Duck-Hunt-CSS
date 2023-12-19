@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Hunt CSS</title>
+    <link rel="stylesheet" href="css/animation.css">
+    <script src="duckHunt.js"></script>
+</head>
+<body>
+    <div id="stage">
+        <div id="stuff">
+            <div id="title">
+                <h1>Duck Hunt CSS</h1>
+            </div>
+            <div id="timer-container">
+                <p><span id="timer-text">Timer: <span id="timer">60</span></span></p>
+            </div>
+            <div id="score-container">
+                <p><span id="score-text">Score: <span id="score">0</span></span></p>
+            </div>
+            <div id="playBtn-container">
+                <button id="playBtn" type="button">Play!</button>
+            </div>
+            <div id="btn">
+                <button id="playAgainBtn" type="button">Play Again!</button>
+            </div>
+        </div>
+        <!-- DOG WALK ANIMATION -->
+        <div id="dog-walk-container">
+            <div class="dog-move">
+                <img class = "dog-walk" src="images/dog-walk.png" alt="duck hunt dog walking">
+            </div>
+        </div>
+        <div id="dog-jump-container">
+            <div id="dog-jump">
+                <img class = "dog-jump" src="images/dog-jump.png" alt="duck hunt dog jumping into bush">
+            </div>
+        </div>
+
+        <!-- DUCK ANIMATION -->
+        <div id="outputDuck">
+            <img id="outputImage"> <!--alt="duck hunt duck flying horizontal"-->
+        </div>
+    </div>
+</body>
+</html>

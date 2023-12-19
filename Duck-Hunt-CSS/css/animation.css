@@ -1,0 +1,575 @@
+@font-face {
+    font-family: 'Duck Hunt';
+    src: url("../font/m29.TTF");
+    /* source for font = https://fontmeme.com/fonts/duck-hunt-font/ */
+}
+
+
+/* -----TABLE OF CONTENTS-----
+- STAGE AND BACKGROUND
+- DOG ANIMATION
+- DUCK ANIMATION HORIZONTAL
+- DUCK ANIMATION DIAGONAL
+- DUCK ANIMATION VERTICAL  */
+
+/* ----STAGE AND BACKGROUND---- */
+body{
+    background-color: black;
+}
+#title{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    font-family: 'Duck Hunt';
+    text-align: center;
+    position: relative;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+
+}
+#stage{
+    display: flex;
+    background-image: url("../images/Duck-Hunt-Stage.png");
+    position:relative;
+	overflow:hidden;
+    align-items: center;
+	width:100%;
+	height:770px;
+}
+#playBtn{
+    font-family: 'Duck Hunt';
+    height: 40px;
+    position: relative;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+#playBtn:hover{
+    background-color: rgb(149, 147, 147);
+}
+#playBtn:active{
+    background-color: rgb(162, 161, 161);
+    text-decoration: underline;
+}
+#playAgainBtn{
+    font-family: 'Duck Hunt';
+    height: 40px;
+    position: relative;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+#playAgainBtn:hover{
+    background-color: rgb(149, 147, 147);
+}
+#playAgainBtn:active{
+    background-color: rgb(162, 161, 161);
+    text-decoration: underline;
+}
+#stuff{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 35%;
+    top: 25%;
+}
+#timer-container{
+    font-family: 'Duck Hunt';
+    color: black;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+    font-size: 20px;
+}
+#score-container{
+    font-family: 'Duck Hunt';
+    color: black;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+    font-size: 20px;
+}
+
+/* ----DOG ANIMATION---- */
+#dog-walk-container{
+    position: absolute;
+    width: 118px;
+    height: 115px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: dogWalk 7s 1;
+}
+#dog-jump-container{
+    opacity: 0;
+    position: absolute;
+    bottom: 85px;
+    left: calc(50% - 59px);
+    width: 118px;
+    height: 115px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: dogJump 7s 1;
+}
+.dog-walk{
+    animation: dogWalkSpriteSheet .5s steps(5) 13;
+}
+.dog-jump{
+    animation: dogJumpSpriteSheet .5s steps(3) 13;
+}
+@keyframes dogWalkSpriteSheet{
+    from {
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes dogJumpSpriteSheet{
+    from {
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes dogWalk{
+    0%{
+        bottom: 85px;
+        left: -118px;
+    }
+    100%{
+        bottom: 85px;
+        left: calc(50% - 59px);
+    }
+}
+@keyframes dogJump{
+    0%{
+        bottom: 85px;
+        left: -118px;
+    }
+    100%{
+        bottom: 85px;
+        left: calc(50% - 59px);
+    }
+}
+
+/* ----DUCK ANIMATION FOR HORIZONTAL---- */
+#duck-fly-hori-container1{
+    position: absolute;
+    width: 85px;
+    height: 65px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: duckFlyHoriDirection1 4s infinite linear;
+}
+.duck-fly-hori{
+    animation: duckFlyHori .4s steps(3) infinite;
+}
+@keyframes duckFlyHori{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes duckFlyHoriDirection1{ /*1349 (1264 stage width + 85) left to get duck off stage*/
+    0%{
+        top: 80px;
+        left: -85px;
+    }
+    30%{
+        top: 400px;
+        left: calc(30% - 25.5px);
+    }
+    100%{
+        top: 100px;
+        left: 1349px;
+    }
+}
+#duck-fly-hori-container2{
+    position: absolute;
+    width: 85px;
+    height: 65px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: duckFlyHoriDirection2 5s infinite linear;
+}
+.duck-fly-hori{
+    animation: duckFlyHori .4s steps(3) infinite;
+}
+@keyframes duckFlyHori{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes duckFlyHoriDirection2{ /*1349 (1264 stage width + 85) left to get duck off stage*/
+    0%{
+        top: 300px;
+        left: -85px;
+    }
+    50%{
+        top: 80px;
+        left: calc(50% - 42.5px);
+    }
+    100%{
+        top: 600px;
+        left: 1349px;
+    }
+}
+#duck-fly-hori-container3{
+    position: absolute;
+    width: 85px;
+    height: 65px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: duckFlyHoriDirection3 5s infinite linear;
+}
+.duck-fly-hori{
+    animation: duckFlyHori .4s steps(3) infinite;
+}
+@keyframes duckFlyHori{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes duckFlyHoriDirection3{ /*1349 (1264 stage width + 85) left to get duck off stage*/
+    0%{
+        top: 0px;
+        left: -85px;
+    }
+    50%{
+        top: 350px;
+        left: calc(50% - 42.5px);
+    }
+    100%{
+        top: 0px;
+        left: 1349px;
+    }
+}
+#duck-fly-hori-container4{
+    position: absolute;
+    width: 85px;
+    height: 65px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: duckFlyHoriDirection4 3s infinite linear;
+}
+.duck-fly-hori{
+    animation: duckFlyHori .4s steps(3) infinite;
+}
+@keyframes duckFlyHori{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes duckFlyHoriDirection4{ /*1349 (1264 stage width + 85) left to get duck off stage*/
+    0%{
+        top: 500px;
+        left: -85px;
+    }
+    100%{
+        top: 500px;
+        left: 1349px;
+    }
+}
+#duck-fly-hori-container5{
+    position: absolute;
+    width: 85px;
+    height: 65px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: duckFlyHoriDirection5 2s infinite linear;
+}
+.duck-fly-hori{
+    animation: duckFlyHori .4s steps(3) infinite;
+}
+@keyframes duckFlyHori{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes duckFlyHoriDirection5{ /*1349 (1264 stage width + 85) left to get duck off stage*/
+    0%{
+        top: 90px;
+        left: -85px;
+    }
+    100%{
+        top: 90px;
+        left: 1349px;
+    }
+}
+/* ----DUCK ANIMATION FOR DIAG---- */
+#duck-fly-diag-container1{
+    position: absolute;
+    width: 85px;
+    height: 70px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: duckFlyDiagDirection1 5s infinite linear;
+}
+.duck-fly-diag{ 
+    animation: duckFlyDiag .4s steps(3) infinite;
+}
+@keyframes duckFlyDiag{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes duckFlyDiagDirection1{
+    0%{
+        bottom: 130px;
+        left: -85px;
+    }
+    100%{
+        bottom: 855px; /*855 (770 stage height + 85) bottom to get duck off stage */
+        left: 1349px;
+    }
+}
+#duck-fly-diag-container2{
+    position: absolute;
+    width: 85px;
+    height: 70px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: duckFlyDiagDirection2 3s infinite linear;
+}
+.duck-fly-diag{ 
+    animation: duckFlyDiag .4s steps(3) infinite;
+}
+@keyframes duckFlyDiag{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes duckFlyDiagDirection2{
+    0%{
+        bottom: 0px;
+        left: -85px;
+        opacity: 0;
+    }
+    30%{
+        bottom: 180px;
+        left: 600px;
+        opacity: 0;
+    }
+    31%{
+        bottom: 181px;
+        left: 601px;
+        opacity: 1;
+    }
+    100%{
+        bottom: 855px; /*855 (770 stage height + 85) bottom to get duck off stage */
+        left: 1349px;
+    }
+}
+#duck-fly-diag-container3{
+    position: absolute;
+    width: 85px;
+    height: 70px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: duckFlyDiagDirection3 6s infinite linear;
+}
+.duck-fly-diag{ 
+    animation: duckFlyDiag .4s steps(3) infinite;
+}
+@keyframes duckFlyDiag{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes duckFlyDiagDirection3{
+    0%{
+        bottom: 0px;
+        left: -85px;
+        opacity: 0;
+    }
+    30%{
+        bottom: 180px;
+        left: 200px;
+        opacity: 0;
+    }
+    31%{
+        bottom: 181px;
+        left: 201px;
+        opacity: 1;
+    }
+    100%{
+        bottom: 855px; /*855 (770 stage height + 85) bottom to get duck off stage */
+        left: 1349px;
+    }
+}
+/* ----DUCK ANIMATION FOR VERTICAL---- */
+#duck-fly-vert-container1{
+    position: absolute;
+    width: 85px;
+    height: 70px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: duckFlyVertDirection1 5s infinite linear;
+}
+.duck-fly-vert{
+    animation: duckFlyVert .4s steps(3) infinite;
+}
+@keyframes duckFlyVert{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes duckFlyVertDirection1{
+    0%{
+        bottom: 0;
+        left: 300px;
+        opacity: 0;
+    }
+    30%{
+        bottom: 180px;
+        left: 300px;
+        opacity: 0;
+    }
+    31%{
+        bottom: 181px;
+        left: 300px;
+        opacity: 1;
+    }
+    100%{
+        bottom: 855px; /*855 (770 stage height + 85) bottom to get duck off stage */
+        left: 300px;
+    }
+}
+#duck-fly-vert-container2{
+    position: absolute;
+    width: 85px;
+    height: 70px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: duckFlyVertDirection2 3s infinite linear;
+}
+.duck-fly-vert{
+    animation: duckFlyVert .4s steps(3) infinite;
+}
+@keyframes duckFlyVert{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes duckFlyVertDirection2{
+    0%{
+        bottom: 0;
+        left: 700px;
+        opacity: 0;
+    }
+    30%{
+        bottom: 180px;
+        left: 700px;
+        opacity: 0;
+    }
+    31%{
+        bottom: 181px;
+        left: 700px;
+        opacity: 1;
+    }
+    100%{
+        bottom: 855px; /*855 (770 stage height + 85) bottom to get duck off stage */
+        left: 700px;
+    }
+}
+#duck-fly-vert-container3{
+    position: absolute;
+    width: 85px;
+    height: 70px;
+    /* background: wheat; */
+    overflow: hidden;
+    animation: duckFlyVertDirection3 7s infinite linear;
+}
+.duck-fly-vert{
+    animation: duckFlyVert .4s steps(3) infinite;
+}
+@keyframes duckFlyVert{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes duckFlyVertDirection3{
+    0%{
+        bottom: 0;
+        left: 900px;
+        opacity: 0;
+    }
+    30%{
+        bottom: 180px;
+        left: 900px;
+        opacity: 0;
+    }
+    31%{
+        bottom: 181px;
+        left: 900px;
+        opacity: 1;
+    }
+    100%{
+        bottom: 855px; /*855 (770 stage height + 85) bottom to get duck off stage */
+        left: 900px;
+    }
+}
+
+/* DUCK DEATH ANIMATION */
+#duck-fly-death{
+    position: absolute;
+    width: 75px;
+    height: 70px;
+    background: wheat;
+    /* overflow: hidden; */
+    animation:  7s infinite linear;
+}
+.duck-death{
+    animation: duckDeath .4s steps(2) infinite;
+}
+@keyframes duckDeath{
+    from{
+        transform: translate3d(0px, 0, 0);
+    }
+    to{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
