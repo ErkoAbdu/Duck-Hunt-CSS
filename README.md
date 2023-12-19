@@ -11,7 +11,8 @@ To use just clone the repo and click the play button. You will have 60 seconds t
 Using CSS I would love to also add the ducks death animation where once clicked it will stop its path and fall straight downards to the grass. After this I would also like to include the animation where the dog picks up the duck and even another where he laughs when you miss a shot. For the Javascript aspect I believe somehow creating a scoreboard at the end of the game would be an excellent idea! 
 
 ## Images:
+Start Screen:
 ![Duck Hunt CSS Start Page](/images/start.png "Duck Hunt CSS Start Page")
 
-
+End Screen:
 ![Duck Hunt CSS End Page](/images/end.png "Duck Hunt CSS End Page")
