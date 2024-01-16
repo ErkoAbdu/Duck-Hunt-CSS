@@ -63,6 +63,14 @@ window.onload = function () {
     //varaibles to output the duck thats been randomized
     const outputDuck = document.getElementById('outputDuck');
     const outputImage = document.getElementById('outputImage');
+    const stageContainer = document.getElementById ("stage");
+
+    stageContainer.addEventListener("click", function(){
+        var gunShot = new Audio('sounds/Gunshot.mp3');
+        gunShot.volume = 0.25;
+        gunShot.playbackRate = 3;
+        gunShot.play();
+    })
 
     //on click of duck gunshot plays and the score goes up by 1
     outputDuck.addEventListener('click', function () {
