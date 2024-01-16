@@ -65,6 +65,7 @@ window.onload = function () {
     const outputImage = document.getElementById('outputImage');
     const stageContainer = document.getElementById ("stage");
 
+    //On click of stage plays gunshot sound effect
     stageContainer.addEventListener("click", function(){
         var gunShot = new Audio('sounds/Gunshot.mp3');
         gunShot.volume = 0.25;
